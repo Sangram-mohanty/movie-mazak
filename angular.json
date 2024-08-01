@@ -20,9 +20,7 @@
             "outputPath": "dist/core",
             "index": "projects/core/src/index.html",
             "browser": "projects/core/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/core/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -80,10 +78,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/core/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -92,9 +87,7 @@
                 "input": "projects/core/public"
               }
             ],
-            "styles": [
-              "projects/core/src/styles.scss"
-            ],
+            "styles": ["projects/core/src/styles.scss"],
             "scripts": []
           }
         },
@@ -112,8 +105,6 @@
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

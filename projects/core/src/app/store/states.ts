@@ -1,4 +1,4 @@
-import {Genre, GenreType} from "../../types/genre.types";
+import { Genre, GenreType } from '../../types/genre.types';
 
 export enum FeatureKey {
   genre = 'genre',

@@ -1,11 +1,11 @@
-import {inject, Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
-import {environment} from "../../../../../environment";
-import {Movie} from "../../types/discover.types";
+import { environment } from '../../../../../environment';
+import { Movie } from '../../types/discover.types';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DiscoverService {
   private readonly baseUrl: string = `${environment.url}discover/`;
