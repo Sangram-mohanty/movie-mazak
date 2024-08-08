@@ -3,20 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 @import 'primeicons/primeicons.css';
+@import "primeng/resources/themes/md-light-indigo/theme.css";
+@import "primeng/resources/primeng.css";
 html {
   $footer-max-height: 3rem;
-  @apply h-full dark:text-white;
+  @apply h-full ;
   body {
-    @apply dark:bg-black h-full m-0 gap-2;
+    @apply  h-full m-0 gap-2;
     main {
       $main-content-height: calc(100% - #{$footer-max-height});
       max-height: $main-content-height;
       margin-bottom: $footer-max-height;
-      @apply h-full dark:bg-black bg-amber-100 overflow-auto;
+      @apply h-full bg-amber-100 overflow-auto;
     }
     footer {
       max-height: $footer-max-height;
-      @apply dark:bg-gray-800 gap-3 w-full fixed bottom-0 p-2 shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] flex items-stretch content-between;
+      @apply  gap-3 w-full fixed bottom-0 p-2 shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] flex items-stretch content-between;
       .menu-1,
       .menu-2 {
         @apply flex flex-auto h-full items-center justify-items-center m-auto;

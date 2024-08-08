@@ -1,1 +1,65 @@
-<p>home works!</p>
+<div
+  class="flex flex-col items-stretch justify-start gap-4 border-amber-950 border-2 p-4 m-4">
+  <form
+    [formGroup]="homeForm"
+    class="flex flex-col items-stretch justify-start gap-4 border-amber-950 border-2 p-4">
+    <ng-container formArrayName="items">
+      @for (fg of homeForm.controls.items.controls; track fg; let id = $index) {
+        <form [formGroup]="fg" class="flex flex-col items-start justify-start gap-4">
+          <div class="flex flex-wrap gap-3">
+            @for (genre of genres; track genre) {
+              <div class="flex align-items-center">
+                <p-radioButton
+                  name="genre-{{id}}"
+                  [value]="genre"
+                  [formControl]="fg.controls.radio"
+                  [inputId]="genre" />
+                <label [for]="genre" class="ml-2">
+                  {{ genre }}
+                </label>
+              </div>
+            }
+          </div>
+          @if (fg.controls.radio.value) {
+            @switch (fg.controls.radio.value) {
+              @case (genreType.ott) {
+                <p-inputNumber
+                  [formControl]="fg.controls.input"
+                  mode="decimal"
+                  inputId="withoutgrouping"
+                  [useGrouping]="false" />                 }
+              @case (genreType.tv) {
+                b
+              }
+              @case (genreType.theatre) {
+                c
+              }
+            }
+          }
+
+        </form>
+      }
+    </ng-container>
+  </form>
+  <div class="flex flex-row justify-between">
+    <button
+      pButton
+      pRipple
+      label="Add supply source"
+      (click)="addFormGroup()"
+      class="p-button-success p-button-outlined px-4"></button>
+    <div class="flex flex-row justify-end gap-4">
+      <button
+        pButton
+        pRipple
+        label="Cancel"
+        class="p-button-success p-button-outlined"></button>
+      <button
+        pButton
+        pRipple
+        label="Submit"
+        class="p-button-success p-button-outlined"></button>
+    </div>
+  </div>
+</div>
+{{ homeForm.getRawValue() | json }}

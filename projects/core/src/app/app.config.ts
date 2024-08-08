@@ -11,6 +11,10 @@ import { apiInterceptorInterceptor } from './helpers/api-interceptor.interceptor
 import { provideStore } from '@ngrx/store';
 import { store } from './store/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import {
+  provideAnimations,
+  provideNoopAnimations,
+} from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,5 +23,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([apiInterceptorInterceptor])),
     provideStore(store),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideAnimations(),
+    provideNoopAnimations(),
   ],
 };

@@ -87,7 +87,11 @@
                 "input": "projects/core/public"
               }
             ],
-            "styles": ["projects/core/src/styles.scss"],
+            "styles": [
+              "projects/core/src/styles.scss",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeng/resources/themes/md-light-indigo/theme.css"
+            ],
             "scripts": []
           }
         },
